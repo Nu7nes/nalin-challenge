@@ -10,7 +10,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 260px;
+    width: 260px;
+    max-width: 90vw;
     text-align: center;
     gap: 16px;
 }

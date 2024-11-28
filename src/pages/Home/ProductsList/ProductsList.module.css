@@ -2,6 +2,10 @@
     padding: 0 16px;
     margin-bottom: 48px;
 }
+.table_box {
+    overflow-x: auto;
+    margin-bottom: 24px;
+}
 
 .table {
     margin: 24px 0;
@@ -38,6 +42,11 @@
     gap: 16px;
     flex-wrap: wrap;
 }
+@media (max-width: 380px) {
+    .navigation > div {
+        margin: auto;
+    }
+  }
 
 .loading_message {
     color: rgb(90, 90, 148);

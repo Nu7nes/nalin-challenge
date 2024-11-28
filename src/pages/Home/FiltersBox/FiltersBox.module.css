@@ -14,7 +14,23 @@
     display: flex;
     align-items: center;
     gap: 16px;
+    flex-wrap: wrap;
+}
+.inputs >div:first-of-type {
+   flex: 40% 1 260px;
+}
+.inputs >div {
+   flex: 1 1 160px;
 }
 .inputs>div>input {
+    padding: 12px 16px;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.buttons>div>input {
     padding: 12px 16px;
 }

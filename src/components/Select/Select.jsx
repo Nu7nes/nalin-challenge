@@ -8,6 +8,7 @@ export default function CustomSelect({
     placeholder,
     label,
     options,
+    value,
     onHandleChange,
 }) {
     function handleChange({ target }) {
@@ -25,6 +26,7 @@ export default function CustomSelect({
                 id={id}
                 name={name}
                 placeholder={placeholder}
+                value={value || 10}
                 onChange={handleChange}
             >
                 {options.map((it) => (

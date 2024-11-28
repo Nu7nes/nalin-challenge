@@ -6,8 +6,9 @@ import strings from "../../../utils/strings";
 export default function FiltersBox({ onHandleFiltersChange, loading }) {
     function handleFiltersChange(event) {
         event.preventDefault();
-        const { code, department } = event.target;
+        const { name, code, department } = event.target;
         const newFilters = {
+            name: name.value,
             code: code.value,
             department: strings.capitalize(department.value),
         };
@@ -17,6 +18,12 @@ export default function FiltersBox({ onHandleFiltersChange, loading }) {
     return (
         <form className={styles.filters} onSubmit={handleFiltersChange}>
             <div className={styles.inputs}>
+                <CustomInput
+                    id="name"
+                    name="name"
+                    placeholder="Nome do produto"
+                    type="text"
+                />
                 <CustomInput
                     id="code"
                     name="code"
@@ -30,7 +37,7 @@ export default function FiltersBox({ onHandleFiltersChange, loading }) {
                     type="text"
                 />
             </div>
-            <div className={styles.inputs}>
+            <div className={styles.buttons}>
                 <CustomButton
                     label="Filtrar"
                     variant="filter"

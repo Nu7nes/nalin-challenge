@@ -6,7 +6,11 @@ import CustomHeader from "../../components/Header/Header";
 import ProductsList from "./ProductsList/ProductsList";
 
 export default function Home() {
-    const [filters, setFilters] = useState({ code: "", department: "" });
+    const [filters, setFilters] = useState({
+        code: "",
+        department: "",
+        name: "",
+    });
     const [productsList, setProductsList] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState({ hasError: false });
@@ -28,10 +32,29 @@ export default function Home() {
                     throw new Error(JSON.stringify(data));
                 }
 
-                setProductsList(data);
-
                 setLoading(false);
-                setError({ hasError: false });
+
+                if (!data.length)
+                    throw new Error(
+                        JSON.stringify({ message: "Nenhum item encontrado!" })
+                    );
+
+                if (!filters.name) return setProductsList(data);
+
+                const filteredByName = await data.filter((it) => {
+                    const name = it.descricao
+                        .normalize("NFD")
+                        .replace(/\p{Mn}/gu, "")
+                        .toLowerCase();
+                    return name.includes(filters.name.toLowerCase());
+                });
+
+                if (!filteredByName.length)
+                    throw new Error(
+                        JSON.stringify({ message: "Nenhum item encontrado!" })
+                    );
+
+                setProductsList(filteredByName);
             } catch (error) {
                 console.log(error);
 

@@ -40,24 +40,26 @@ export default function ProductsList({ list, loading }) {
         <p className={styles.loading_message}>Carregando...</p>
     ) : (
         <div className={`container ${styles.box}`}>
-            <table className={styles.table}>
-                <thead>
-                    <tr className={`${styles.item} ${styles.headItem}`}>
-                        <th>Cód.</th>
-                        <th>Nome</th>
-                        <th>Departamento</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {adjustedList.map((item, index) => (
-                        <tr key={index} className={styles.item}>
-                            <th>{item.codigo}</th>
-                            <td>{item.descricao}</td>
-                            <td>{item.departamento}</td>
+            <div className={`container ${styles.table_box}`}>
+                <table className={styles.table}>
+                    <thead>
+                        <tr className={`${styles.item} ${styles.headItem}`}>
+                            <th>Cód.</th>
+                            <th>Nome</th>
+                            <th>Departamento</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {adjustedList.map((item, index) => (
+                            <tr key={index} className={styles.item}>
+                                <th>{item.codigo}</th>
+                                <td>{item.descricao}</td>
+                                <td>{item.departamento}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
             <nav className={styles.navigation}>
                 <Pagination
                     current={paginationSetup.current}
@@ -72,6 +74,7 @@ export default function ProductsList({ list, loading }) {
                 <CustomSelect
                     label={"Itens por página:"}
                     options={[10, 30, 50]}
+                    value={paginationSetup.itemsPerPage}
                     onHandleChange={(count) =>
                         setPaginationSetup({
                             ...paginationSetup,
