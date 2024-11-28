@@ -37,7 +37,7 @@ Certifique-se de ter instalado:
 
     ```bash
     git clone https://github.com/Nu7nes/nalin-challenge.git
-    cd seu-repositorio
+    cd nalin-challenge
     ```
 
 2. **Instale as dependências:**
