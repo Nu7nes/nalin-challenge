@@ -1,0 +1,67 @@
+.button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+.button:hover {
+    transition: all 0.4s;
+    filter: brightness(115%);
+}
+.button:disabled {
+    filter: saturate(0%);
+    filter: opacity(60%);
+    cursor: default;
+}
+
+.primary {
+    background-color: #636a79;
+    color: #fff;
+}
+.secondary {
+    background-color: #d84545;
+    color: #fff;
+    padding: 12px 16px;
+    margin-top: 0;
+    height: min-content;
+    text-transform: capitalize;
+    letter-spacing: normal;
+}
+.filter {
+    background-color: #5c80f5;
+    color: #fff;
+    padding: 12px 16px;
+    margin-top: 0;
+    height: min-content;
+    text-transform: capitalize;
+    letter-spacing: normal;
+}
+.reset {
+    background-color: #8a8a8a;
+    color: #fff;
+    padding: 12px 16px;
+    margin-top: 0;
+    height: min-content;
+    text-transform: capitalize;
+    letter-spacing: normal;
+}
+
+.page {
+    background-color: #949eb4;
+    color: #fff;
+    padding: 8px 12px;
+}
+.page_active {
+    background-color: #4f5561;
+    color: #fff;
+    padding: 8px 12px;
+    cursor: default;
+}
+.page_active:hover {
+    filter: brightness(100%);
+}

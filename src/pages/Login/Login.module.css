@@ -1,0 +1,40 @@
+.page {
+    max-width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 260px;
+    text-align: center;
+    gap: 16px;
+}
+.login_title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333333;
+    line-height: 0.9;
+}
+.login_text {
+    font-size: 14px;
+    color: #636363;
+}
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.form > button {
+    margin-top: 8px;
+}
+.error_message {
+    color: rgb(160, 27, 27);
+    font-size: 14px;
+    font-weight: 600;
+}

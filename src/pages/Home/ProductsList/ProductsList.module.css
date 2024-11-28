@@ -1,0 +1,40 @@
+.box {
+    padding: 0 16px;
+    margin-bottom: 48px;
+}
+
+.table {
+    margin: 24px 0;
+    border-collapse: collapse;
+    text-align: start;
+    width: 100%;
+}
+.table thead {
+    background-color: #f7f7f7;
+    overflow: hidden;
+}
+.table th {
+    color: #5e5e5e;
+    font-weight: 600;
+}
+.table th,
+.table td {
+    padding: 8px 16px;
+    text-align: start;
+}
+.table th:first-of-type {
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+}
+.table th:last-of-type {
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}

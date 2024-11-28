@@ -1,0 +1,1 @@
+export const baseURL = "https://api.lojasnalin.com.br:4000/estagionalin"

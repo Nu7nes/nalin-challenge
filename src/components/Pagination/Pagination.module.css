@@ -1,0 +1,9 @@
+.box {
+    display: flex;
+    width: min-content;
+    gap: 8px;
+}
+.box button:first-of-type,
+.box button:last-of-type {
+    margin: 0 8px;
+}
