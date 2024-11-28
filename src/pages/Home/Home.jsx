@@ -11,8 +11,6 @@ export default function Home() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState({ hasError: false });
 
-    const queryCount = useRef(0);
-
     useEffect(() => {
         setLoading(true);
         setError({ hasError: false });
@@ -31,7 +29,6 @@ export default function Home() {
                 }
 
                 setProductsList(data);
-                queryCount.current++;
 
                 setLoading(false);
                 setError({ hasError: false });
@@ -53,17 +50,17 @@ export default function Home() {
             <div className="container">
                 <FiltersBox
                     filters={filters}
+                    loading={loading}
                     onHandleFiltersChange={(newFilters) =>
                         setFilters({ ...newFilters })
                     }
                 />
                 {error.hasError ? (
-                    <p className={styles.errorMessage}>Nenhum item encontrado!</p>
+                    <p className={styles.error_message}>
+                        Nenhum item encontrado!
+                    </p>
                 ) : (
-                    <ProductsList
-                        list={productsList}
-                        queryCount={queryCount.current}
-                    />
+                    <ProductsList loading={loading} list={productsList} />
                 )}
             </div>
         </>

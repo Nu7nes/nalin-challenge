@@ -4,7 +4,7 @@ import Pagination from "../../../components/Pagination/Pagination";
 import CustomInput from "../../../components/Input/Input";
 import CustomSelect from "../../../components/Select/Select";
 
-export default function ProductsList({ list, queryCount }) {
+export default function ProductsList({ list, loading }) {
     const [adjustedList, setAdjustedList] = useState([]);
     const [paginationSetup, setPaginationSetup] = useState({
         current: 1,
@@ -12,16 +12,12 @@ export default function ProductsList({ list, queryCount }) {
         itemsPerPage: 10,
     });
 
-    // useEffect(() => {
-    //     console.log(queryCount);
-    //     setPaginationSetup({ ...paginationSetup, current: 1, total: 10 });
-    // }, [queryCount]);
-
     useEffect(() => {
         const itemsCount = list.length;
         const divisioReminder = itemsCount % paginationSetup.itemsPerPage;
         const pagesCount =
-            (itemsCount - divisioReminder) / paginationSetup.itemsPerPage;
+            (itemsCount - divisioReminder) / paginationSetup.itemsPerPage +
+            (divisioReminder > 0 ? 1 : 0);
 
         setPaginationSetup({
             ...paginationSetup,
@@ -40,7 +36,9 @@ export default function ProductsList({ list, queryCount }) {
         setAdjustedList(slicedList);
     }, [list, paginationSetup.current, paginationSetup.itemsPerPage]);
 
-    return (
+    return loading ? (
+        <p className={styles.loading_message}>Carregando...</p>
+    ) : (
         <div className={`container ${styles.box}`}>
             <table className={styles.table}>
                 <thead>

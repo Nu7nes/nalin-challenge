@@ -4,7 +4,7 @@
     padding: 24px 16px;
     color: #333333
 }
-.errorMessage {
+.error_message {
     color: rgb(32, 32, 70);
     margin: 32px 0;
     font-weight: 500;

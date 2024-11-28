@@ -38,3 +38,9 @@
     gap: 16px;
     flex-wrap: wrap;
 }
+
+.loading_message {
+    color: rgb(90, 90, 148);
+    margin: 32px 0;
+    text-align: center;
+}

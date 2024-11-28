@@ -3,7 +3,7 @@ import CustomButton from "../../../components/Button/Button";
 import CustomInput from "../../../components/Input/Input";
 import strings from "../../../utils/strings";
 
-export default function FiltersBox({ onHandleFiltersChange }) {
+export default function FiltersBox({ onHandleFiltersChange, loading }) {
     function handleFiltersChange(event) {
         event.preventDefault();
         const { code, department } = event.target;
@@ -31,8 +31,18 @@ export default function FiltersBox({ onHandleFiltersChange }) {
                 />
             </div>
             <div className={styles.inputs}>
-                <CustomButton label="Filtrar" variant="filter" type="submit" />
-                <CustomButton label="Limpar" variant="reset" type="reset" />
+                <CustomButton
+                    label="Filtrar"
+                    variant="filter"
+                    type="submit"
+                    loading={loading}
+                />
+                <CustomButton
+                    label="Limpar"
+                    variant="reset"
+                    type="reset"
+                    loading={loading}
+                />
             </div>
         </form>
     );

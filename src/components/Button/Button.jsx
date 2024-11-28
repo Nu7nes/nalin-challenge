@@ -18,7 +18,7 @@ export default function CustomButton({
             type={type}
             onClick={onClick}
         >
-            {loading ? "Aguarde..." : label}
+            {loading && type !== "reset" ? "Aguarde..." : label}
         </button>
     );
 }
